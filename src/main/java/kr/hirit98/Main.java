@@ -49,7 +49,7 @@ public class Main {
                    break;
                case SEARCH:
                    System.out.println("검색");
-                   System.out.println("찾고싶은 정보의 이름을 입력: ");
+                   System.out.print("찾고싶은 정보의 이름을 입력: ");
                    Address address = manager.searchByName(sc.nextLine());
 
                    if(address==null)
@@ -59,7 +59,12 @@ public class Main {
                    break;
                case REMOVE:
                    System.out.println("삭제");
-                   break;
+                   System.out.print("삭제 하고 싶은 이름을 입력: ");
+                   if(manager.removeByName(sc.nextLine())) {
+                   System.out.println("삭제되었습니다.");
+                    } else
+                        System.out.println("찾을수 없는 이름입니다.");
+               break;
            }
        }
 
